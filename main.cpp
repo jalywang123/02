@@ -23,7 +23,7 @@ void client(int sock){
     while(fgets(sendbuf, sizeof(sendbuf), stdin) != NULL){
         sendto(sock, sendbuf, strlen(sendbuf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
         //6、开始接收数据，接收服务端返回的数据
-        ret = recvfrom(sock, recvbuf, sizeof(recvbuf), 0, NULL, NULL);
+       // ret = recvfrom(sock, recvbuf, sizeof(recvbuf), 0, NULL, NULL);
         if(ret == -1){
             perror("recvfrom");
             exit(EXIT_FAILURE);
