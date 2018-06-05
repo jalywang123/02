@@ -21,7 +21,7 @@ void client(int sock){
     char recvbuf[1024] = {0};
     //5、开始发送数据（此处是发送来自标准输入的数据）
     while(fgets(sendbuf, sizeof(sendbuf), stdin) != NULL){
-        sendto(sock, sendbuf, strlen(sendbuf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
+        //sendto(sock, sendbuf, strlen(sendbuf), 0, (struct sockaddr *)&servaddr, sizeof(servaddr));
         //6、开始接收数据，接收服务端返回的数据
        // ret = recvfrom(sock, recvbuf, sizeof(recvbuf), 0, NULL, NULL);
         if(ret == -1){
